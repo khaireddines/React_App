@@ -24,7 +24,7 @@ class Counter extends Component {
         }
     }
     render() {
-        const {counter,positiveClicks, negativeClicks} = this.state;
+        const {counter, positiveClicks, negativeClicks} = this.state;
         return (
             <div>
                 <h1> Counter : {counter} </h1>
