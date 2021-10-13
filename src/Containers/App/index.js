@@ -20,7 +20,7 @@ const App = () => {
     let tokens = localStorage.getItem('tokens');
     let location = useLocation();
     return (
-      <div className="App">
+      <div className="App" style={{height:'100%'}}>
         <Switch>
           <Route exact path='/signin'/>
           <Route exact path='/signup'/>

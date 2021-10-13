@@ -1,4 +1,4 @@
-export default Data = [
+export let Data = [
   {
     "gender": "female",
     "name": "Ella Solomon",

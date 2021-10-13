@@ -1,0 +1,14 @@
+.SearchBox{
+    height: 30px;
+    border-radius: 20px;
+    border: 1px dashed gray;
+    width: 30rem;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.SearchBox::placeholder{
+    text-align: center;
+    font-weight: 800;
+    font-size: larger;
+    letter-spacing: 4px;
+}

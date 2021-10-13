@@ -1,0 +1,34 @@
+.UserCell{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border: 2px dashed gray;
+    margin-bottom: 5px;
+}
+.UserCell .Title{
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 4;
+}
+.UserCell .Title>span{
+    font-size: 12px;
+}
+.UserCell .Body{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.UserCell .Body>span{
+    font-size: 12px;
+    flex-shrink: 1;
+    padding: 5px;
+}
+.UserCell .Footer{
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+}
+.UserCell .Footer>span{
+    font-size: 12px;
+}
