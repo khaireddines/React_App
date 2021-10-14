@@ -1,8 +1,10 @@
-span{
-    font-size: 50px;
+.star{
+    font-size: 20px;
     cursor: pointer;
-    padding: 1rem;
+    padding-right: 10px;
+    text-align: center;
+    font-weight: 900;
 }
-span.active{
-    color: yellow;
+.star.active{
+    color: #f18e01;
 }

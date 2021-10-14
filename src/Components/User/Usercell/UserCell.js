@@ -1,4 +1,5 @@
 import React from 'react'
+import Stars from '../../Stars/Stars';
 import './UserCell.css';
 
 let UserCell = ({Personnel}) => {
@@ -9,17 +10,17 @@ let UserCell = ({Personnel}) => {
                     return (
                         <div className={'UserCell'} key={index} >
                             <div className={'Title'}>
-                                <span> <strong>Full Name:</strong> {(Person.gender === Male)?'Mr.':'Ms. '} {Person.name} </span>
+                                <span className={'names'}> <strong>Full Name:</strong> {(Person.gender === Male)?'Mr.':'Ms. '} {Person.name} </span>
                                 <span> <strong>Age:</strong> {Person.age} </span>
                             </div>
                             <div className={'Body'}>
-                                <span> <strong>Address:</strong>{Person.address} </span>
-                                <span> <strong>Phone:</strong> {Person.phone} </span>
-                                <span> <strong>Email:</strong> {Person.email} </span>
+                                <div> <strong>Address:</strong>{Person.address} </div> 
+                                <div> <strong>Phone:</strong> {Person.phone} </div>
+                                <div> <strong>Email:</strong> {Person.email} </div>
                             </div>
                             <div className={'Footer'}>
                                 <span> <strong>Balance:</strong> {Person.balance} </span>
-                                <span> <strong>Likes:</strong> {Person.likes}, <strong>Rating:</strong> {Person.rating} </span>
+                                <span className={'Ratings'} > <strong>Likes:</strong> {Person.likes}, <strong>Rating:</strong> <Stars Stars={Person.rating}/></span>
                             </div>
                         </div>
                     )

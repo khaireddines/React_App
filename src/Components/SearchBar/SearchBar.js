@@ -8,18 +8,18 @@ class SearchBar extends Component {
         super(props)
         this.state = { data: Data, search: '', criteria: 'name' }
     }
-    componentDidMount(){
+    componentDidMount() {
         if (localStorage.getItem('state')) {
             const LocalState = JSON.parse(localStorage.getItem('state'))
             this.setState(LocalState)
         }
     }
-    componentWillUnmount(){
-        localStorage.setItem('state',JSON.stringify(this.state))
+    componentWillUnmount() {
+        localStorage.setItem('state', JSON.stringify(this.state))
     }
-    componentDidUpdate(prevProps,prevState){
+    componentDidUpdate(prevProps, prevState) {
         if (prevState != this.state) {
-            localStorage.setItem('state',JSON.stringify(this.state))
+            localStorage.setItem('state', JSON.stringify(this.state))
         }
     }
     handleSearch = (event) => {
@@ -32,6 +32,7 @@ class SearchBar extends Component {
                 search: event.target.value,
                 data: Data.filter((item, index) => (new RegExp(SearchValue)).test(item[Criteria]))
             })
+
     }
     render() {
         let { data, search, criteria } = this.state
@@ -46,16 +47,16 @@ class SearchBar extends Component {
                 <select
                     className={'SearchCriteria'}
                     value={criteria}
-                    onChange={(event)=>this.setState({criteria:event.target.value})}
-                    >
-                        <option value={'name'}>Name</option>
-                        <option value={'age'}>Age</option>
-                        <option value={'email'}>Email</option>
-                        <option value={'phone'}>Phone</option>
-                        <option value={'address'}>Address</option>
-                        <option value={'balance'}>Balance</option>
-                        <option value={'likes'}>Likes</option>
-                        <option value={'rating'}>Rating</option>
+                    onChange={(event) => this.setState({ criteria: event.target.value })}
+                >
+                    <option value={'name'}>Name</option>
+                    <option value={'age'}>Age</option>
+                    <option value={'email'}>Email</option>
+                    <option value={'phone'}>Phone</option>
+                    <option value={'address'}>Address</option>
+                    <option value={'balance'}>Balance</option>
+                    <option value={'likes'}>Likes</option>
+                    <option value={'rating'}>Rating</option>
                 </select>
                 <UserCell Personnel={data} />
             </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import './stars.css'
 
-const Stars = () => {
+const Stars = ({Stars}) => {
     let rateing = (event) =>{
         let Element = event.target;
         let ParentNode = event.target.parentNode;
@@ -18,7 +18,7 @@ const Stars = () => {
         <>
         {
             Array.from(Array(5).keys()).map((index) => {
-                return <span key={index} onClick={rateing} >*</span>
+                return <span key={index} onClick={rateing} className={`${Stars>=index+1?'active':''} star`} >*</span>
             })
         }
         </>
