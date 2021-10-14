@@ -30,7 +30,7 @@ class SearchBar extends Component {
         else
             this.setState({
                 search: event.target.value,
-                data: Data.filter((item, index) => (new RegExp(SearchValue)).test(item[Criteria]))
+                data: Data.filter((item, index) => (new RegExp('\\'+SearchValue, "i")).test(item[Criteria]))
             })
 
     }
