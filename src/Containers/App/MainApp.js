@@ -6,13 +6,11 @@ import Stars from '../../Components/Stars/Stars'
 
 const MainApp = () => {
     return (
-        <div style={{height:'100%'}}>
-            {/* <Stars />  */}
-            {/* <Counter /> */}
-            {/* <SearchBar /> */}
-            <Tasks />
-        </div>
+        <Tasks />
     )
 }
 
 export default MainApp
+//{/* <Stars />  */}
+//{/* <Counter /> */}
+//{/* <SearchBar /> */}

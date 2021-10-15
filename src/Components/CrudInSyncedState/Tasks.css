@@ -1,0 +1,12 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.tasksCrud>form{
+    display: flex;
+    flex-direction: column;
+}
+.tasksCrud>form input, textarea, select{
+    margin-bottom: 0.5rem;
+}
