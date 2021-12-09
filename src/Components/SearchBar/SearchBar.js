@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import UserCell from '../User/Usercell/UserCell';
 import { Data } from "./data/Data";
 import './SearchBar.css';
+import {Route, Routes} from 'react-router-dom';
+import UserList from "../User/UserList/UserList";
 
 class SearchBar extends Component {
     constructor(props) {
@@ -30,7 +32,7 @@ class SearchBar extends Component {
         else
             this.setState({
                 search: event.target.value,
-                data: Data.filter((item, index) => (new RegExp('\\'+SearchValue, "i")).test(item[Criteria]))
+                data: Data.filter((item, index) => (new RegExp(SearchValue, "i")).test(item[Criteria]))
             })
 
     }
@@ -58,7 +60,10 @@ class SearchBar extends Component {
                     <option value={'likes'}>Likes</option>
                     <option value={'rating'}>Rating</option>
                 </select>
-                <UserCell Personnel={data} />
+                <Routes>
+                    <Route path={'*'} element={<UserList Personnel={data} />} />
+                    <Route path={':name'} element={<UserCell Details={true} Data={data} />} />
+                </Routes>
             </div>
         )
     }

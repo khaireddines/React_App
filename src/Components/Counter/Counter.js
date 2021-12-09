@@ -19,7 +19,7 @@ class Counter extends Component {
         localStorage.setItem('state',JSON.stringify(this.state))
     }
     componentDidUpdate(prevProps,prevState){
-        if (prevState != this.state) {
+        if (prevState !== this.state) {
             localStorage.setItem('state',JSON.stringify(this.state))
         }
     }
@@ -31,7 +31,7 @@ class Counter extends Component {
                 <button 
                 onClick={()=>this.setState({positiveClicks:positiveClicks+1,counter:counter+1})} >
                     + ({positiveClicks} clicks)</button>
-                <button disabled={(counter == 0)? true : false}
+                <button disabled={(counter === 0)}
                 onClick={()=>this.setState({negativeClicks:negativeClicks+1,counter:counter-1})} >
                     - ({negativeClicks} clicks)</button>
             </div>
